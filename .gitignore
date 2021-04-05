@@ -1,0 +1,19 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# No Use Templete
+template/bs3/*
+template/bshark/*
+template/mario/*
+template/mdui/*
+template/sweet/*
+
+# db info
+include/db_info.inc.php
