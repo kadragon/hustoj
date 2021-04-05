@@ -1,4 +1,4 @@
-<?php $show_title=$id." - 错误信息 - $OJ_NAME"; ?>
+<?php $show_title=$id." - 채점정보 - $OJ_NAME"; ?>
 <?php include("template/$OJ_TEMPLATE/header.php");?>
 
 <script src="https://cdnjs.loli.net/ajax/libs/textfit/2.3.1/textFit.min.js"></script>
@@ -32,7 +32,7 @@
 <div class="padding">
     <div style="margin-top: 0px; margin-bottom: 14px; " v-if="content != null && content !== ''">
     <p class="transition visible">
-           <strong >错误信息</strong>
+           <strong >에러 메시지</strong>
         </p>
         <div class="ui existing segment">
           <pre v-if="escape" style="margin-top: 0; margin-bottom: 0; "><code><?php echo $view_reinfo?></code></pre>
@@ -41,7 +41,7 @@
 
     <div style="margin-top: 0px; margin-bottom: 14px; " v-if="content != null && content !== ''">
     <p class="transition visible">
-           <strong >辅助解释</strong>
+           <strong >보조설명</strong>
         </p>
         <div class="ui existing segment">
           <pre v-if="escape" style="margin-top: 0; margin-bottom: 0; "><code><div id='errexp'></div></code></pre>

@@ -4,9 +4,6 @@
 
 
 <?php
-  error_reporting(E_ALL);
-  ini_set('display_errors', '1');
-
   function reformat($times) {
     $a = explode(":", explode(" ", $times)[1]);
     $b = explode("-", explode(" ", $times)[0]);
@@ -87,7 +84,7 @@
   <table id="vueAppFuckSafari" class="ui very basic structured table striped compact" style="white-space: nowrap; " id="table">
     <thead>
       <tr>
-		<!-- <th></th> -->
+		    <th></th>
 		    <th class="center aligned">ID</th>
         <th class="center aligned">문제</th>
         <th class="center aligned">결과</th>
@@ -106,10 +103,10 @@
     foreach($view_status as $row){
       ?>
       <tr>
-        <!-- <td class="center aligned"><?=$row[0]?></td> -->
+        <td class="center aligned"><b><?=$row[0]?></b></td>
         <td class="center aligned"><?=$row[1]?></td>
         <td class="center aligned"><?=$row[2]?></td>
-        <td class="aligned"><?=$row[3]?></td>
+        <td class="aligned"><b><?=$row[3]?></b></td>
         <td class="right aligned"><?=$row[4]?></td>
         <td class="right aligned"><?=$row[5]?></td>
         <td class="center aligned"><?=$row[6]?></td>

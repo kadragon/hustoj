@@ -1,5 +1,12 @@
 <?php $show_title="$OJ_NAME"; ?>
 <?php include("template/$OJ_TEMPLATE/header.php");?>
+<?php
+function reformat($times) {
+    $a = explode(":", explode(" ", $times)[1]);
+    $b = explode("-", explode(" ", $times)[0]);
+    return sprintf("%s-%s / %s:%s", $b[1], $b[2], $a[0], $a[1]);
+  }
+  ?>
 <script src="https://cdnjs.loli.net/ajax/libs/textfit/2.3.1/textFit.min.js"></script>
 <div class="padding">
 
@@ -81,10 +88,10 @@
 
 
 
-  <table id="vueAppFuckSafari" class="ui very basic center aligned table" style="white-space: nowrap; " id="table">
+  <table id="vueAppFuckSafari" class="ui very basic structured table striped compact" style="white-space: nowrap; " id="table">
     <thead>
       <tr>
-		<th></th>
+          <th></th>
 		<th>ID</th>
         <th>문제</th>
         <th>결과</th>
@@ -101,10 +108,27 @@
 	  </tr> -->
     <?php
     foreach($view_status as $row){
-    $i=0;
+    
+      ?>  
+      <tr>
+      <td class="center aligned"><b><?=$row[0]?></b></td>
+      <td class="center aligned"><?=$row[1]?></td>
+        <td class="center aligned"><?=$row[2]?></td>
+        <td class="aligned"><b><?=$row[3]?></b></td>
+        <td class="right aligned"><?=$row[4]?></td>
+        <td class="right aligned"><?=$row[5]?></td>
+        <td class="center aligned"><?=$row[6]?></td>
+        <td class="right aligned"><?=explode(" ",$row[7])[0]?>B</td>
+        <td class="center aligned"><?=reformat($row[8])?></td>
+      </tr>
+    <?php
+    }
+    ?>
+<!-- 
+  $i=0;
     echo "<tr>";
     foreach($row as $table_cell){
-      if ($i == 9)
+  if ($i == 9)
         break;
       if($i>3&&$i!=8)
         echo "<td class='hidden-xs'><b>";
@@ -114,10 +138,7 @@
       echo "</b></td>";
       $i++;
     }
-    echo "</tr>\n";
-    }
-    ?>
-
+    echo "</tr>\n"; -->
     </tbody>
   </table>
   <div style="margin-bottom: 30px; ">

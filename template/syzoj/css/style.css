@@ -1,8 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap');
-
-* {
-  font-family: 'Nanum Gothic Coding', monospace;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 .ui.header,
 .ui.button,
@@ -26,11 +22,7 @@ h3,
 h4,
 h5,
 body {
-  font-family: Lato, -apple-system, "PingFang SC",
-    /* Apple */ "Source Han Sans SC", "Noto Sans CJK SC",
-    /* Google */ "Microsoft Yahei", "Lantinghei SC", "Hiragino Sans GB",
-    "Microsoft Sans Serif", /* M$ */ "WenQuanYi Micro Hei",
-    /* *nix */ sans-serif;
+  font-family: 'Noto Sans KR', sans-serif
 }
 
 a.black-link {
@@ -253,7 +245,7 @@ body > .ui.page.dimmer {
 }
 
 code {
-  font-family: "Consolas", "Ubuntu Mono", "Fira Mono", "Monaco", "Menlo", "source-code-pro", monospace !important;
+  font-family: "Fira Mono", 'Nanum Gothic Coding', monospace !important;
 }
 
 /* Animated spinner */

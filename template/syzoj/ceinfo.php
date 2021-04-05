@@ -1,4 +1,4 @@
-<?php $show_title=$id." - 编译信息 - $OJ_NAME"; ?>
+<?php $show_title=$id." - $OJ_NAME"; ?>
 <?php include("template/$OJ_TEMPLATE/header.php");?>
 
 <script src="https://cdnjs.loli.net/ajax/libs/textfit/2.3.1/textFit.min.js"></script>

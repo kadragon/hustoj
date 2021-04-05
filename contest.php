@@ -238,7 +238,7 @@ else {
 	if (isset($_GET['page']))
 		$page = intval($_GET['page']);
 
-	$page_cnt = 10;
+	$page_cnt = 100;
 	$pstart = $page_cnt*$page-$page_cnt;
 	$pend = $page_cnt;
 	$rows = pdo_query("select count(1) from contest where defunct='N'");
@@ -289,13 +289,13 @@ else {
 
 
 	if ($keyword) {
-		$sql = "SELECT *  FROM contest WHERE contest.defunct='N' AND contest.title LIKE ? $wheremy  ORDER BY contest_id";
+		$sql = "SELECT *, if (now() > end_time, 'b', 'a') as p FROM contest WHERE contest.defunct='N' AND contest.title LIKE ? $wheremy  ORDER BY p, title";
 		$sql .= " limit ".strval($pstart).",".strval($pend); 
 
 		$result = pdo_query($sql,$keyword);
 	}
 	else {
-		$sql = "SELECT *  FROM contest WHERE contest.defunct='N' $wheremy  ORDER BY contest_id";
+		$sql = "SELECT *, if (now() > end_time, 'b', 'a') as p  FROM contest WHERE contest.defunct='N' $wheremy  ORDER BY p, title";
 		$sql .= " limit ".strval($pstart).",".strval($pend); 
 		//echo $sql;
 		$result = mysql_query_cache($sql);
@@ -341,6 +341,8 @@ else {
     	$view_contest[$i][5] = "<span class=text-danger>$MSG_Private</span>";
 
     $view_contest[$i][6] = $row['user_id'];
+	$view_contest[$i][7] = $row['start_time'];
+	$view_contest[$i][8] = $row['end_time'];
 
     $i++;
   }

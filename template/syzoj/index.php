@@ -100,18 +100,18 @@
     </div>
     <div>
         <div class="wide column sixteen">
-        <h4 class="ui top attached block header"><i class="ui calendar icon"></i>최근대회</h4>
+        <h4 class="ui top attached block header"><i class="ui calendar icon"></i>진행중인 대회</h4>
             <div class="ui bottom attached center aligned segment">
                 <table class="ui very basic center aligned table">
                     <thead>
                         <tr>
                             <th>대회명</th>
-                            <th>대회시간</th>
+                            <th>대회 시작시간</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $sql_contests = "select * FROM `contest` WHERE defunct != 'Y' ORDER BY `contest_id` DESC LIMIT 5";
+                        $sql_contests = "select * FROM `contest` WHERE defunct != 'Y' and end_time > now() ORDER BY `title` LIMIT 10";
                         $result_contests = mysql_query_cache( $sql_contests );
                         if ( $result_contests ) {
                             $i = 1;
